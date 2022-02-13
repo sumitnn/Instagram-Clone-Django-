@@ -44,7 +44,7 @@
                                 </div>
                             </div>
                             <div class="my-1 form__input">
-                                <input id="id_full_name" type="text" name="full_name" placeholder="Full Name" class="form-control {% if form.full_name.errors %}is-invalid{% endif %}">
+                                <input id="id_fullname" type="text" name="fullname" placeholder="Full Name" class="form-control {% if form.full_name.errors %}is-invalid{% endif %}">
                                 <div class="invalid-feedback">
                                     {{ form.full_name.errors }}
                                 </div>
@@ -70,7 +70,7 @@
                 </div>
             </div>
             <div class="text-center card mt-2 px-5 mx-auto signup__card">
-                <p class="have__an__account py-3">Have an account? <a href="" class="text-decoration-none">Sign in</a></p>
+                <p class="have__an__account py-3">Have an account? <a href="{% url 'login' %}" class="text-decoration-none">Sign in</a></p>
             </div>
         </div>
     </div>

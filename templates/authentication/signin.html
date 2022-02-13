@@ -29,7 +29,7 @@
                             <form method="POST">
                                 {% csrf_token %}
                                 <div class="my-1 form__input">
-                                    <input id="id_email_username" type="text" name="email_username" placeholder="Email or Username">
+                                    <input id="id_email_username" type="text" name="email" placeholder="Email or Username">
                                 </div>
                                 <div class="my-1 form__input">
                                     <input id="id_password" type="password" name="password" placeholder="Password">
@@ -51,7 +51,7 @@
                     </div>
                 </div>
                 <div class="text-center card mt-2 px-5 mr-md-auto signin__card">
-                    <p class="have__an__account py-3">Don't have an account? <a href="" class="text-decoration-none">Sign up</a></p>
+                    <p class="have__an__account py-3">Don't have an account? <a href="{% url 'signup' %}" class="text-decoration-none">Sign up</a></p>
                 </div>
                 <div class="text-center mt-2 px-5 mr-auto get__app">
                     <p class="">Get the app.</p>

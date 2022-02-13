@@ -2,4 +2,4 @@ from django.shortcuts import render
 
 # Create your views here.
 def Home(request):
-    return render(request,'components/post_card.html')
+    return render(request,'authentication/signin.html')
