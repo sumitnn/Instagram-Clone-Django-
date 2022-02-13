@@ -2,15 +2,16 @@ from django.shortcuts import render,redirect
 from .forms import MyUserCreationForm
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
+import re
+from core.models import User
 # Create your views here.
 
 def Login(request):
     if request.method == 'POST':
-        username = request.POST['email']
+        email = request.POST['email']
         password = request.POST['password']
-        
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
+        user = authenticate(username=email, password=password)
+        if user :
             login(request, user)
             messages.success(request,"Successfully Login")
             return redirect('home')

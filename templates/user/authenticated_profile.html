@@ -13,7 +13,7 @@
 
                     <!-- Profile Picture -->
                     {% if user.picture %}
-                        <a href="{% url 'profile_edit_view' request.user.username %}">
+                        <a href="">
                             <img src="{{ user.picture.url }}" class="profile__pic">
                         </a>
                     {% else %}
@@ -31,7 +31,7 @@
                     <h2 class="username__text mr-4">{{ user.username }}</h2>
 
                     <!-- Edit Profile Button -->
-                    <a class="edit__profile__btn mx-3 mx-md-4 text-decoration-none text-reset px-2 py-1" href="{% url 'profile_edit_view' request.user.username %}">Edit Profile</a>
+                    <a class="edit__profile__btn mx-3 mx-md-4 text-decoration-none text-reset px-2 py-1" href="">Edit Profile</a>
 
                     <!-- Settings icon -->
                     <a class="text-decoration-none text-reset settings__icon d-flex justify-content-center" data-toggle="modal" data-target="#settings_list">
@@ -116,7 +116,7 @@
                         {% for post in request.user.post_set.all %}
                             <!-- Single posts grid -->
                             <div class='card p-0 col-12 col-md-4 col-lg-3 my-4 mx-3'>
-                                <a href="{% url 'post_detail_view' post.pk %}" class="text-decoration-none text-reset">
+                                <a href="" class="text-decoration-none text-reset">
 
                                     <!-- Post image -->
                                     <img src="{{ post.image.url }}" class="w-100 img-fluid" style="height: 230px;object-fit: cover;">
@@ -158,7 +158,7 @@
                                                 <p>Do you really want to delete this post?</p>
                                             </div>
                                             <div class="p-1 m-0 px-4">
-                                                <form method="POST" action="{% url 'post_delete_view' post.pk %}">
+                                                <form method="POST" action="">
                                                     {% csrf_token %}
                                                     <button class="btn btn-sm btn-warning" type="submit">Yes</button>
                                                     <a class="btn btn-sm btn-info" data-dismiss="modal">No</a>
@@ -193,7 +193,7 @@
                         {% for savedpost_obj in request.user.savedpost_set.all %}
                             {% with post=savedpost_obj.post %}
                             <div class='card p-0 col-12 col-md-4 col-lg-3 my-4 mx-3'>
-                                <a href="{% url 'post_detail_view' post.pk %}" class="text-decoration-none text-reset">
+                                <a href="" class="text-decoration-none text-reset">
                                     <img src="{{ post.image.url }}" class="w-100 img-fluid" style="height: 230px;object-fit: cover;">
                                     <div class='posts__likes__comment mx-auto py-3 text-center text-mute row justify-content-center' style="font-size: 14px;">
                                         <span class="mx-2">
@@ -235,7 +235,7 @@
 
                     <!-- Edit Profile Button -->
                     <div class="p-1 m-0 px-4">
-                        <a href="{% url 'profile_edit_view' request.user.username %}" class="text-reset text-decoration-none">Edit Profile</a>
+                        <a href="" class="text-reset text-decoration-none">Edit Profile</a>
                     </div>
                     <!-- Edit Profile Button end -->
 
@@ -243,7 +243,7 @@
 
                     <!-- Change password button -->
                     <div class="p-1 m-0 px-4">
-                        <a href="{% url 'password_change_view' %}" class="text-reset text-decoration-none">Change Password</a>
+                        <a href="" class="text-reset text-decoration-none">Change Password</a>
                     </div>
                     <!-- Change password button end -->
 
@@ -252,7 +252,7 @@
                     <div class="p-1 m-0 px-4">
 
                     <!-- Signout button -->
-                    <form method="POST" action="{% url 'signout_view' %}">
+                    <form method="POST" action="">
                         {% csrf_token %}
                         <a href="javascript:;" onclick="parentNode.submit();" class="text-reset text-decoration-none">Sign Out</a>
                     </form>
